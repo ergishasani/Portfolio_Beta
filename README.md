@@ -73,11 +73,10 @@ A fast, responsive, and futuristic personal portfolio built with **React**, **Vi
 ## 🔧 Installation & Setup
 
 1. **Clone the repo**
-   ```bash
-   git clone <your-repo-url> .
-   ```
 
-````
+   ```bash
+   git clone https://github.com/ergishasani/Portfolio_Beta.git
+   ```
 
 2. **Install dependencies**
 
@@ -208,6 +207,4 @@ This project is **MIT** licensed. See the [LICENSE](LICENSE) file for details.
 
 ```
 
-Feel free to tweak any section—let me know if you’d like to add more details or adjust the structure!
 ```
-````
