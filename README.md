@@ -1,6 +1,6 @@
 # 🚀 Personal Portfolio
 
-A fast, responsive, and futuristic personal portfolio built with **React**, **Vite**, **SCSS**, and **React Bits**. Showcases your Hero, About, Skills, Work, Testimonials, Contact form—and more—organized for easy customization and scalability.
+A fast, responsive, and futuristic personal portfolio built entirely with **Node.js**, **Express**, **EJS** templates, and **SCSS**. Showcases your Hero, About, Skills, Work, Testimonials, Contact form—and more—organized for easy customization and scalability.
 
 ---
 
@@ -21,13 +21,14 @@ A fast, responsive, and futuristic personal portfolio built with **React**, **Vi
 
 ## 🌐 Demo
 
-> **Live preview coming soon!**  
-> You can run locally by following the steps below.
+> **Live preview coming soon!**
+> Run locally by following the steps below.
 
 ---
 
 ## ✨ Features
 
+- **Server-rendered Templates** with EJS
 - **Hero Section**
 - **About Me**
 - **Skills**
@@ -44,20 +45,18 @@ A fast, responsive, and futuristic personal portfolio built with **React**, **Vi
 - **Open-Source Projects**
 - **Newsletter Signup**
 - **FAQ**
-- **Back-to-Top Button**
-- **Dark-Mode Toggle**
-- **Contact Form**
+- **Dark-Mode Toggle** (via client JS)
+- **Contact Form** handled by Nodemailer
 - **Footer with Social Links**
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Framework:** React
-- **Bundler:** Vite
-- **Styling:** SCSS (global + partials)
-- **UI Kit:** React Bits
-- **Language:** JavaScript (ES6+)
+- **Runtime & Framework:** Node.js, Express
+- **Templating:** EJS
+- **Styling:** SCSS (compiled with node-sass-middleware)
+- **Mailer:** Nodemailer (for contact form submissions)
 - **Version Control:** Git
 
 ---
@@ -65,8 +64,8 @@ A fast, responsive, and futuristic personal portfolio built with **React**, **Vi
 ## ⚙️ Prerequisites
 
 - [Node.js](https://nodejs.org/) v14+
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- A code editor (e.g. VS Code)
+- [npm](https://www.npmjs.com/)
+- A code editor (e.g., VS Code)
 
 ---
 
@@ -76,37 +75,49 @@ A fast, responsive, and futuristic personal portfolio built with **React**, **Vi
 
    ```bash
    git clone https://github.com/ergishasani/Portfolio_Beta.git
+   cd Portfolio_Beta
    ```
 
 2. **Install dependencies**
 
    ```bash
    npm install
-   npm install react-bits
-   npm install -D sass
    ```
 
-3. **Run the dev server**
+3. **Configure environment**
+
+   - Create a `.env` file in the root with your mail settings and port:
+
+     ```env
+     PORT=3000
+     SMTP_HOST=smtp.example.com
+     SMTP_PORT=587
+     SMTP_USER=your@email.com
+     SMTP_PASS=yourpassword
+     ```
+
+4. **Compile SCSS and start server**
 
    ```bash
+   # In one terminal, watch SCSS
+   npm run sass
+
+   # In another terminal, start dev server
    npm run dev
    ```
 
-4. **Open in browser**
-   Visit `http://localhost:5173` (or the port Vite shows).
+5. **Open in browser**
+   Visit `http://localhost:3000`.
 
 ---
 
 ## 📜 Available Scripts
 
-In the project directory, you can run:
-
-| Command         | Description                                 |
-| --------------- | ------------------------------------------- |
-| `npm run dev`   | Start development server                    |
-| `npm run build` | Build for production into `dist/`           |
-| `npm run serve` | Preview production build locally (via Vite) |
-| `npm run lint`  | Run ESLint (if configured)                  |
+| Command        | Description                                      |
+| -------------- | ------------------------------------------------ |
+| `npm run dev`  | Start Express server with nodemon                |
+| `npm start`    | Start Express server in production mode          |
+| `npm run sass` | Watch and compile SCSS (`scss/` → `public/css/`) |
 
 ---
 
@@ -114,86 +125,58 @@ In the project directory, you can run:
 
 ```
 portfolio/
-├── public/
-│   ├── index.html
-│   ├── favicon.ico
-│   └── manifest.json
-│
-├── src/
-│   ├── assets/
-│   │   ├── images/                # static images
-│   │   ├── icons/                 # SVG icons
-│   │   └── styles/                # all SCSS files
-│   │       ├── base/              # resets, typography, variables
-│   │       ├── components/        # per-component SCSS
-│   │       ├── utils/             # mixins & functions
-│   │       └── main.scss          # global import entrypoint
-│   │
-│   ├── data/                      # JSON/JS content (testimonials, work, etc.)
-│   │
-│   ├── components/                # all React components (flat)
-│   │   ├── About.jsx
-│   │   ├── Awards.jsx
-│   │   ├── BackToTop.jsx
-│   │   ├── BlogList.jsx
-│   │   ├── Clients.jsx
-│   │   ├── ContactForm.jsx
-│   │   ├── DarkModeToggle.jsx
-│   │   ├── Education.jsx
-│   │   ├── FAQ.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Newsletter.jsx
-│   │   ├── OpenSource.jsx
-│   │   ├── Resume.jsx
-│   │   ├── Services.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Stats.jsx
-│   │   ├── Testimonials.jsx
-│   │   ├── Timeline.jsx
-│   │   ├── Work.jsx
-│   │   └── Footer.jsx
-│   │
-│   ├── hooks/                     # custom React hooks
-│   ├── contexts/                  # React contexts (e.g. ThemeContext)
-│   ├── utils/                     # helper modules / API wrappers
-│   ├── App.jsx                    # root layout & router
-│   └── index.jsx                  # entry point, import main.scss here
-│
-├── .gitignore
+├── scss/                   # SCSS source files
+│   └── main.scss
+├── public/                 # Static assets
+│   ├── css/                # Compiled CSS
+│   ├── js/                 # Client-side JavaScript
+│   └── images/             # Images
+├── views/                  # EJS templates
+│   ├── partials/           # header.ejs, footer.ejs, etc.
+│   ├── index.ejs           # Home page
+│   ├── about.ejs           # About page
+│   └── contact.ejs         # Contact page
+├── routes/                 # Express routes
+│   └── index.js
+├── controllers/            # Route handlers
+│   └── contactController.js
+├── utils/                  # Helpers (e.g., mailer.js)
+│   └── mailer.js
+├── .env                    # Environment variables
 ├── package.json
-├── README.md                     # ← you are here
-└── vite.config.js                # or webpack.config.js
+└── server.js               # App entry point
 ```
 
 ---
 
 ## 🚀 Deployment
 
-You can deploy the production build to any static-hosting service:
+- Host on any Node.js-compatible platform (Heroku, Vercel, Render).
+- **Steps:**
 
-- **Netlify**: drag & drop your `dist/` folder or connect your repo.
-- **Vercel**: import your Git repo, set root to `/`.
-- **GitHub Pages**: build locally and push `dist/` to `gh-pages` branch.
+  1. Set environment variables on your host.
+  2. Run `npm install` and `npm start`.
 
 ---
 
 ## 🤝 Contributing
 
 1. Fork this repo
+
 2. Create a feature branch:
 
    ```bash
    git checkout -b feature/YourFeature
    ```
 
-3. Commit your changes and push:
+3. Commit and push:
 
    ```bash
-   git commit -m "Add some feature"
+   git commit -m "Add feature"
    git push origin feature/YourFeature
    ```
 
-4. Open a Pull Request—describe your changes and link any issues.
+4. Open a Pull Request.
 
 ---
 
@@ -202,9 +185,3 @@ You can deploy the production build to any static-hosting service:
 This project is **MIT** licensed. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-> Crafted with ❤️ using React, Vite, SCSS & React Bits
-
-```
-
-```

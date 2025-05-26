@@ -1,21 +1,31 @@
 {
-  "name": "portfolio-beta",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "portfolio_beta",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "scss": "sass src/scss:public/css --no-source-map --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ergishasani/Portfolio_Beta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ergishasani/Portfolio_Beta/issues"
+  },
+  "homepage": "https://github.com/ergishasani/Portfolio_Beta#readme",
+  "description": "",
   "dependencies": {
-    "portfolio-beta": "file:",
-    "react-bits": "^1.0.5",
-    "vue": "^3.5.13"
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
-    "sass": "^1.89.0",
-    "vite": "^6.3.5"
+    "nodemon": "^3.1.10",
+    "sass": "^1.89.0"
   }
 }

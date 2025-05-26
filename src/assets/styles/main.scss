@@ -1,1 +1,34 @@
-    
+// 1️⃣ Reset (no change)
+@use './base/reset';
+
+// 2️⃣ Variables (define CSS vars)
+@use './base/variables';
+
+// 3️⃣ Typography
+@use './base/typography';
+
+// 4️⃣ Utils (mixins, functions)
+@use './utils/mixins';
+
+// 5️⃣ Component styles (these can continue using var(--...))
+@use './components/Header';
+@use './components/Footer';
+@use './components/DarkModeToggle';
+@use './components/Hero';
+@use './components/About';
+@use './components/Skills';
+@use './components/Work';
+@use './components/Testimonials';
+@use './components/ContactForm';
+@use './components/Timeline';
+@use './components/Education';
+@use './components/Services';
+@use './components/BlogList';
+@use './components/Resume';
+@use './components/Clients';
+@use './components/Stats';
+@use './components/Awards';
+@use './components/OpenSource';
+@use './components/Newsletter';
+@use './components/FAQ';
+@use './components/BackToTop';
