@@ -1,187 +1,70 @@
-# 🚀 Personal Portfolio
+# Getting Started with Create React App
 
-A fast, responsive, and futuristic personal portfolio built entirely with **Node.js**, **Express**, **EJS** templates, and **SCSS**. Showcases your Hero, About, Skills, Work, Testimonials, Contact form—and more—organized for easy customization and scalability.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## 📋 Table of Contents
+In the project directory, you can run:
 
-1. [Demo](#-demo)
-2. [Features](#-features)
-3. [Tech Stack](#-tech-stack)
-4. [Prerequisites](#-prerequisites)
-5. [Installation & Setup](#-installation--setup)
-6. [Available Scripts](#-available-scripts)
-7. [Project Structure](#-project-structure)
-8. [Deployment](#-deployment)
-9. [Contributing](#-contributing)
-10. [License](#-license)
+### `npm start`
 
----
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🌐 Demo
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-> **Live preview coming soon!**
-> Run locally by following the steps below.
+### `npm test`
 
----
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## ✨ Features
+### `npm run build`
 
-- **Server-rendered Templates** with EJS
-- **Hero Section**
-- **About Me**
-- **Skills**
-- **Work / Projects**
-- **Testimonials**
-- **Experience Timeline**
-- **Education & Certifications**
-- **Services Offered**
-- **Blog / Articles**
-- **Resume Download**
-- **Clients & Logos**
-- **Stats / Counters**
-- **Awards & Recognition**
-- **Open-Source Projects**
-- **Newsletter Signup**
-- **FAQ**
-- **Dark-Mode Toggle** (via client JS)
-- **Contact Form** handled by Nodemailer
-- **Footer with Social Links**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
----
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 🛠 Tech Stack
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- **Runtime & Framework:** Node.js, Express
-- **Templating:** EJS
-- **Styling:** SCSS (compiled with node-sass-middleware)
-- **Mailer:** Nodemailer (for contact form submissions)
-- **Version Control:** Git
+### `npm run eject`
 
----
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## ⚙️ Prerequisites
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- [Node.js](https://nodejs.org/) v14+
-- [npm](https://www.npmjs.com/)
-- A code editor (e.g., VS Code)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
----
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## 🔧 Installation & Setup
+## Learn More
 
-1. **Clone the repo**
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-   ```bash
-   git clone https://github.com/ergishasani/Portfolio_Beta.git
-   cd Portfolio_Beta
-   ```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-2. **Install dependencies**
+### Code Splitting
 
-   ```bash
-   npm install
-   ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-3. **Configure environment**
+### Analyzing the Bundle Size
 
-   - Create a `.env` file in the root with your mail settings and port:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-     ```env
-     PORT=3000
-     SMTP_HOST=smtp.example.com
-     SMTP_PORT=587
-     SMTP_USER=your@email.com
-     SMTP_PASS=yourpassword
-     ```
+### Making a Progressive Web App
 
-4. **Compile SCSS and start server**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-   ```bash
-   # In one terminal, watch SCSS
-   npm run sass
+### Advanced Configuration
 
-   # In another terminal, start dev server
-   npm run dev
-   ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-5. **Open in browser**
-   Visit `http://localhost:3000`.
+### Deployment
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## 📜 Available Scripts
+### `npm run build` fails to minify
 
-| Command        | Description                                      |
-| -------------- | ------------------------------------------------ |
-| `npm run dev`  | Start Express server with nodemon                |
-| `npm start`    | Start Express server in production mode          |
-| `npm run sass` | Watch and compile SCSS (`scss/` → `public/css/`) |
-
----
-
-## 🗂 Project Structure
-
-```
-portfolio/
-├── scss/                   # SCSS source files
-│   └── main.scss
-├── public/                 # Static assets
-│   ├── css/                # Compiled CSS
-│   ├── js/                 # Client-side JavaScript
-│   └── images/             # Images
-├── views/                  # EJS templates
-│   ├── partials/           # header.ejs, footer.ejs, etc.
-│   ├── index.ejs           # Home page
-│   ├── about.ejs           # About page
-│   └── contact.ejs         # Contact page
-├── routes/                 # Express routes
-│   └── index.js
-├── controllers/            # Route handlers
-│   └── contactController.js
-├── utils/                  # Helpers (e.g., mailer.js)
-│   └── mailer.js
-├── .env                    # Environment variables
-├── package.json
-└── server.js               # App entry point
-```
-
----
-
-## 🚀 Deployment
-
-- Host on any Node.js-compatible platform (Heroku, Vercel, Render).
-- **Steps:**
-
-  1. Set environment variables on your host.
-  2. Run `npm install` and `npm start`.
-
----
-
-## 🤝 Contributing
-
-1. Fork this repo
-
-2. Create a feature branch:
-
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-
-3. Commit and push:
-
-   ```bash
-   git commit -m "Add feature"
-   git push origin feature/YourFeature
-   ```
-
-4. Open a Pull Request.
-
----
-
-## 📄 License
-
-This project is **MIT** licensed. See the [LICENSE](LICENSE) file for details.
-
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

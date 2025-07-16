@@ -1,8 +1,0 @@
-// Example mixin
-@use '../base/variables' as var;
-
-@mixin responsive-text($min-size, $max-size) {
-  font-size: clamp($min-size, 2vw + 1rem, $max-size);
-}
-
-// …add your own helpers here
