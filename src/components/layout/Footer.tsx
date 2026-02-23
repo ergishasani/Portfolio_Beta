@@ -58,7 +58,7 @@ export function Footer() {
                 Have a project in mind?
               </h4>
               <p className="mt-3 text-sm text-white/60">
-                Send your scope and I’ll propose a clean structure and timeline.
+                Send your scope and I'll propose a clean structure and timeline.
               </p>
             </div>
 
@@ -72,33 +72,37 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 text-xs text-white/50 md:flex-row">
-          <p>© {new Date().getFullYear()} Ergis Hasani. All rights reserved.</p>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/ergishasani"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            title="GitHub"
+            className="transition hover:text-white"
+          >
+            <Github size={18} />
+          </a>
 
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/ergishasani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-white"
-            >
-              <Github size={18} />
-            </a>
-            <a
-              href="https://linkedin.com/in/ergis-h-bb9ba0174"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-white"
-            >
-              <Linkedin size={18} />
-            </a>
-            <a
-              href="mailto:your@email.com"
-              className="transition hover:text-white"
-            >
-              <Mail size={18} />
-            </a>
-          </div>
+          <a
+            href="https://linkedin.com/in/ergis-h-bb9ba0174"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
+            className="transition hover:text-white"
+          >
+            <Linkedin size={18} />
+          </a>
+
+          <a
+            href="mailto:your@email.com"
+            aria-label="Send email"
+            title="Email"
+            className="transition hover:text-white"
+          >
+            <Mail size={18} />
+          </a>
         </div>
       </div>
     </footer>
