@@ -1,7 +1,7 @@
 import React from "react";
 
-const Hero = () => {
+const Testimonials = () => {
   return <section className="container">Content</section>;
 };
 
-export default Hero;
+export default Testimonials;

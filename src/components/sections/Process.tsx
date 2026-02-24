@@ -1,7 +1,7 @@
 import React from "react";
 
-const Hero = () => {
+const Process = () => {
   return <section className="container">Content</section>;
 };
 
-export default Hero;
+export default Process;
