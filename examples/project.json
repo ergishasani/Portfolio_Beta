@@ -1,0 +1,14 @@
+{
+  "slug": "my-first-project",
+  "title": "My first project",
+  "description": "What this project does and how I built it.",
+  "coverImage": "https://i.ibb.co/REPLACE-ME/cover.jpg",
+  "images": [],
+  "projectTypes": ["web"],
+  "tags": ["Next.js", "Tailwind CSS"],
+  "liveUrl": "",
+  "repositoryUrl": "",
+  "featured": true,
+  "status": "draft",
+  "order": 0
+}

@@ -1,21 +1,20 @@
+import type { Metadata } from "next";
 import "./globals.css";
-import { ReactNode } from "react";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import NavigationDock from "@/components/layout/NavigationDock";
+import PageTransition from "@/components/layout/PageTransition";
 
-export const metadata = {
-  title: "Ergis Hasani — SaaS Builder",
-  description:
-    "I build fast, minimal websites and SaaS dashboards for EU teams.",
+export const metadata: Metadata = {
+  title: "Ergis Hasani | Portfolio",
+  description: "Personal portfolio of Ergis Hasani.",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+    <html lang="en" data-scroll-behavior="smooth">
+      <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <PageTransition>{children}</PageTransition>
+        <NavigationDock />
       </body>
     </html>
   );

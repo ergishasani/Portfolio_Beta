@@ -1,7 +1,0 @@
-import React from "react";
-
-const Hero = () => {
-  return <section className="container">Content</section>;
-};
-
-export default Hero;
